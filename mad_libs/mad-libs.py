@@ -59,7 +59,7 @@ def fillInMadLib():
             j = i
             while(sampleMadLib[j] != " "):
                 j += 1
-            sampleMadLib[i-1, j] = noun[1]
+            sampleMadLib.split(i-1, j) = noun[1]
     for i in range(len(sampleMadLib)):
         print(sampleMadLib[i])
 
