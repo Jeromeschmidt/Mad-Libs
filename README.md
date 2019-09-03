@@ -8,3 +8,4 @@ Features(Stretch challenges):
 - if input is improper, prompts the user for proper input
 - randomizes words of same type
 - uses 4 parts of speech
+- terminal displays colored text
