@@ -35,38 +35,33 @@ He puts on the grandmother's <nn and gets into her bed. \n \
 When the girl arrives at her grandmother's house, she gets into <nn with the wolf. \n \
 The wolf leaps upon the child and <vb (plural) her"
 
+#color help found at https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python
+class bcolors:
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    END = '\033[0m'
+
 def user_input(prompt):
     #taken from Captain Rainbow checklist#
     # the input function will display a message in the terminal
     # and wait for user input.
     user_input = input(prompt)
-    if(user_input.isalpha() == False):
-        user_input("please enter a valid input:")
+    while(user_input.isalpha() == False):
+        user_input = input(bcolors.RED + "Please enter a valid input:\n" + bcolors.END)
     return user_input
 
 def getNoun():
-    noun.append(user_input("Enter a noun:\n"))
-
-def getPlural_Noun():
-    plural_noun.append(user_input("Enter a plural noun:\n"))
+    noun.append(user_input(bcolors.YELLOW + "Enter a noun:\n"+ bcolors.END))
 
 def getAdjective():
-    adjective.append(user_input("Enter a adjective:\n"))
+    adjective.append(user_input(bcolors.YELLOW + "Enter a adjective:\n"+ bcolors.END))
 
 def getVerb():
-    verb.append(user_input("Enter a verb:\n"))
-
-def getPlural_Verb():
-    plural_verb.append(user_input("Enter a plural verb:\n"))
-
-def getInterjection():
-    interjection.append(user_input("Enter a interjection:\n"))
-
-def getPreposition():
-    preposition.append(user_input("Enter a preposition:\n"))
+    verb.append(user_input(bcolors.YELLOW + "Enter a verb:\n"+ bcolors.END))
 
 def getAdverb():
-    adverb.append(user_input("Enter a adverb:\n"))
+    adverb.append(user_input(bcolors.YELLOW + "Enter a adverb:\n"+ bcolors.END))
 
 def fillInMadLib():
     i = 0
@@ -90,7 +85,7 @@ def fillInMadLib():
         else:
             final = final + sampleMadLib[i]
             i += 1
-    print(final)
+    print(bcolors.GREEN + final + bcolors.END)
 
 def initial_start():
     runWhile = True
