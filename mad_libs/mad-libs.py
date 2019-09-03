@@ -1,26 +1,13 @@
 
-##################################### flask
-# from flask import Flask
-# app = Flask(__name__)
-#
-#
-# @app.route('/')
-# def hello_world():
-#     return 'This will be a Mad Libs Machine!'
-#
-# if __name__ == '__main__':
-#     app.run()
-######################################
-
-# from PyDictionary import PyDictionary
-#
-# dictionary = PyDictionary()
 import random
 
+#parts of speech declaration
 noun = list()
 adjective = list()
 verb = list()
 adverb = list()
+
+#sample mad lib
 sampleMadLib = "\nLittle Red Riding <nn is a \n \
 <jj fairy tale for young children. \n \
 It is a story about a <jj girl and a wolf. \n \
@@ -51,6 +38,7 @@ def user_input(prompt):
         user_input = input(bcolors.RED + "Please enter a valid input:\n" + bcolors.END)
     return user_input
 
+#these functions get proper part of speech from user
 def getNoun():
     noun.append(user_input(bcolors.YELLOW + "Enter a noun:\n"+ bcolors.END))
 
@@ -63,6 +51,7 @@ def getVerb():
 def getAdverb():
     adverb.append(user_input(bcolors.YELLOW + "Enter a adverb:\n"+ bcolors.END))
 
+#function to fill in mad lib and display final result
 def fillInMadLib():
     i = 0
     j = 0
@@ -87,6 +76,7 @@ def fillInMadLib():
             i += 1
     print(bcolors.GREEN + final + bcolors.END)
 
+#function to run and get word inputs from user
 def initial_start():
     runWhile = True
     while(runWhile == True):
@@ -99,7 +89,7 @@ def initial_start():
                     getAdjective()
                 elif(compString == "vb "):
                     getVerb()
-                else:#(compString == "rb "):
+                else:
                     getAdverb()
 
         runWhile = False
